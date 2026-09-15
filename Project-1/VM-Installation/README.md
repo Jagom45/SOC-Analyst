@@ -9,7 +9,9 @@ This section documents the installation and setup of the virtual machines for th
 
 - Operating System
 - Here is the link for Windows Server 2022: https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
+- 
 -Here is the link for Security Onion 2: https://docs.securityonion.net/en/2.4/download.html
+
 -Here is the link for Kali Linux: https://www.kali.org/get-kali/#kali-virtual-machines
 -Download those ISO files
 
