@@ -5,7 +5,7 @@ This section documents the installation and setup of the virtual machines for th
 ## Virtual Machine Software
 
 - VMware Workstation
--Download links are below
+- Download links are below
 
 - Virtual Machine
 - Here is the link for Virtual Machine Software: https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion
