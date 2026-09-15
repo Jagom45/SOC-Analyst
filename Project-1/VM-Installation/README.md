@@ -5,15 +5,18 @@ This section documents the installation and setup of the virtual machines for th
 ## Virtual Machine Software
 
 - VMware Workstation
+-Download links are below
+
+-Virtual Machine
 - Here is the link for Virtual Machine Software: https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion
 
 - Operating System
 - Here is the link for Windows Server 2022: https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
-- 
+
 -Here is the link for Security Onion 2: https://docs.securityonion.net/en/2.4/download.html
 
 -Here is the link for Kali Linux: https://www.kali.org/get-kali/#kali-virtual-machines
--Download those ISO files
+
 
 **Installing the Virtual Machine ISO files
 - Go to your download folder and install VMware Workstation
