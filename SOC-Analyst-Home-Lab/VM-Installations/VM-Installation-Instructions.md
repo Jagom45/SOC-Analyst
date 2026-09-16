@@ -113,6 +113,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On the following options have been set, would you like to proceed page, use the tab button to select yes
 - Let the installtion process finish
 - On the STANDALONE setup is now complete page, use the tab button to select ok, also make sure to use the IP address to enter the portal for Security Onion 2
+- If you like you can use the command sudo su so-status to see if the containers in Security Onion 2 are running, it should say running in green text
 
 
 
