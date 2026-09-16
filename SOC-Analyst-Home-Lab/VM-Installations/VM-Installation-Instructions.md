@@ -74,8 +74,8 @@ This section documents the installation and setup for the virtual machines in a 
 - In the Specify Disk Capacity window, type in 200.0, select Split virtual disk into multiple files, click next
 - In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 16384MB in the Memory for this virtual machine,
 - Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 8 in the drop down
-- Click on Network Adapter and select Bridged and click on Replicate Physical Conenction State
-- Click on Add button at the bottom to add a new Network Adapter, on the Hardware Type window click on Network Adapter and click on finished, you will see Network Adapter 2 and it should be on NAT, click on close
+- Click on Network Adapter and select NAT and click on Replicate Physical Conenction State
+- Click on Add button at the bottom to add a new Network Adapter, on the Hardware Type window click on Network Adapter and click on finished, you will see Network Adapter 2, click on Network Adapter 2 and select Bridge and click on Replicate Physical Connection State, click on close
 - On the Ready to Create Virtual Machine click on Finish
 
 ## Installing Security Onion 2 ISO image on VMWare Workstation
