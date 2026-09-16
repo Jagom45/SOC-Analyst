@@ -112,6 +112,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On The Security Onion development team could use your help page, use the tab button to select yes
 - On the following options have been set, would you like to proceed page, use the tab button to select yes
 - Let the installtion process finish
+- On the STANDALONE setup is now complete page, use the tab button to select ok, also make sure to use the IP address to enter the portal for Security Onion 2
 
 
 
