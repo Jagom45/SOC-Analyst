@@ -72,7 +72,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On Guest Operation System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Security Onion Server ISO file in your Download folder, click next
 - On Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
 - In the Specify Disk Capacity window, type in 200.0, select Split virtual disk into multiple files, click next
-- In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 16384MB in the Memory for this virtual machine,
+- In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 16384MB in the Memory for this virtual machine
 - Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 8 in the drop down
 - Click on Network Adapter and select NAT and click on Replicate Physical Conenction State
 - Click on Add button at the bottom to add a new Network Adapter, on the Hardware Type window click on Network Adapter and click on finished, you will see Network Adapter 2, click on Network Adapter 2 and select Bridge and click on Replicate Physical Connection State, click on close
@@ -115,14 +115,35 @@ This section documents the installation and setup for the virtual machines in a 
 - On the STANDALONE setup is now complete page, use the tab button to select ok, also make sure to use the IP address to enter the portal for Security Onion 2
 - If you like you can use the command sudo su so-status to see if the containers in Security Onion 2 are running, it should say running in green text
 
+## Installing Kali Linux ISO image on VMWare Workstation
+- Go to your Download folders and find the Kali Linux zip file and unzip it
+- Right click on VMware Workstation Pro and Run as administrator
+- Click Yes on the pop up window
+- Click on File in the tabs section
+- Click on new Virtual Machine
+- In the New Virtual Machine Wizard window, click on Typical (recommended) option, click next
+- On Guest Operation System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Kali Linux ISO file in your Download folder, click next
+- On Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
+- In the Specify Disk Capacity window, type in 20.0, select Split virtual disk into multiple files, click next
+- In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 2048MB in the Memory for this virtual machine
+- Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 2 in the drop down
+- Click on Network Adapter and select Bridged and click on Replicate Physical Connection State, click on close and then click on finish
+
+  
 
 
-**Installing for Kali linux
-- Go to your download folder and install VMware Workstation
-- Next click on file, new virtual machine, next, click on browse and find the ISO image, click next for Easy Install Information, name your virtual machine and click next, select 40GB for maximum disk size and click one Split virtual disk into multiple files, click finish, follow the installation process
 
-**Installing for Security Onion 2
-- Go to your download folder and install VMware Workstation
-- Next click on file, new virtual machine, next, click on browse and find the ISO image, click next for Easy Install Information, name your virtual machine and click next, select 200GB for maximum disk size and click one Split virtual disk into multiple files, under Ready to Create Virtual Machine click on Customize Hardware, under memory put 16GB, under processor select 8 cores, click finish, follow the installation process
 
-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
