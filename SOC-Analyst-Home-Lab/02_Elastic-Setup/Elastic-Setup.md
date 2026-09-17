@@ -18,7 +18,7 @@
 - On the login page enter the username and password and press Enter
 - You will see Access the Security Onion web interface at http: IP Address, use Chrome or Edge to access that address, it will take you to the Security Onion 2 portal, access it on the Windows Server 2022 virtual machines using Chrome or Edge
 - In the Security Onion 2 virtual machines type in sudo so-status and type in the password, it will display the Security Onion Status in green text and it should say running
-- In the Windows Server 2022 on the bottom right click on the search bar and type in cmd, in the cmd prompt type in ipconfig to see the virtual machine IP address
+- In the Windows Server 2022 on the bottom right click on the search bar and type in cmd, in the cmd prompt type in ipconfig to see the virtual machine IP address, also type in hostname to see the host name of your virtual machine
 - In the Windows Server 2022 Click on Edge, on the Welcome page, click on Start without your date, click on Confirm and continue, click on Continue without google data, click on Confirm and continue, click on Confirm and start browsing
 - Type the IP address that was shown in Security Onion 2 in Chrome or Edge
 - On the login Webpage, enter the email and password
@@ -28,3 +28,5 @@
 - Click on the Elastic Agent file and right click on it, click on Administrator
 - Let the installation process finish
 - In the Downloads folder you will see a file named SO-Elastic-Agent_Installer, click on it and it should say Elastic Agent installation completed
+- On the Security Onion 2 webpage, click on Elastic Fleet, on the Elastic Fleet webpage type in the username and password, on the Fleet page, you will see the hostname of your Windows Server 2022, click on the Agent policies tab, click on endpoint-initial, click on elastic-defend-endpoints, scroll down and click on the button for Malware protections, then under Protection level, select Prevent and deselect Blocklist and select Scan files upon modification, then click on Save integration towards the bottom of the screen
+- On the Security Onion webpage, click on Kibana, click on the 3 bars, click on Management, click on Spaces, click on Security and select Timeline
