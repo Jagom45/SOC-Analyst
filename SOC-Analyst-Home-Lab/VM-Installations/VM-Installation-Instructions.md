@@ -48,7 +48,7 @@ This section documents the installation and setup for the virtual machines in a 
 - Click on Network Adapter and select Bridged and click on Replicate Physical Connection State, click on close
 - On the Ready to Create Virtual Machine click on Finish
 
-## Installing Windows Server 2022 ISO image on VMWare Workstation
+## Installing Windows Server 2022 ISO image
 - Click on Power on this virtual machine
 - On the Press any key to boot from CD or DVD.., press Enter on your keyboard
 - On the Microsoft Server Operating System Setup click next
@@ -63,7 +63,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On the Administrator window type in the password that you decided on
 - On the Networks notification click on yes
 
-## Installing Security Onion 2
+## Installing Security Onion 2 in VMWare Workstation
 - Right click on VMware Workstation Pro and Run as administrator
 - Click Yes on the pop up window
 - Click on File in the tabs section
@@ -78,7 +78,7 @@ This section documents the installation and setup for the virtual machines in a 
 - Click on Add button at the bottom to add a new Network Adapter, on the Hardware Type window click on Network Adapter and click on finished, you will see Network Adapter 2, click on Network Adapter 2 and select Bridge and click on Replicate Physical Connection State, click on close
 - On the Ready to Create Virtual Machine click on Finish
 
-## Installing Security Onion 2 ISO image on VMWare Workstation
+## Installing Security Onion 2 ISO image 
 - Click on Power on this virtual machine
 - On the WARNING window, type in yes and press enter
 - For Enter an administrative username pick a name and press enter
@@ -115,7 +115,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On the STANDALONE setup is now complete page, use the tab button to select ok, also make sure to use the IP address to enter the portal for Security Onion 2
 - If you like you can use the command sudo su so-status to see if the containers in Security Onion 2 are running, it should say running in green text
 
-## Installing Kali Linux ISO image on VMWare Workstation
+## Installing Kali Linux ISO image in VMWare Workstation
 - Go to your Download folders and find the Kali Linux zip file and unzip it
 - Right click on VMware Workstation Pro and Run as administrator
 - Click Yes on the pop up window
@@ -130,7 +130,7 @@ This section documents the installation and setup for the virtual machines in a 
 - Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 2 in the drop down
 - Click on Network Adapter and select Bridged and click on Replicate Physical Connection State, click on close and then click on finish
 
-## Kali Linux Installation
+## Installing Kali Linux Installation ISO image
 - Click on Power on this virtual machine
 - On the Kali Linux Installer menu, select Graphical Install and press Enter
 - On the Select a Language window, select a language and press on the continue button
