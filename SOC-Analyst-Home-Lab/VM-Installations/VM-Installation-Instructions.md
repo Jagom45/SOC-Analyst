@@ -17,7 +17,7 @@ This section documents the installation and setup for the virtual machines in a 
 - https://download.securityonion.net/file/securityonion/securityonion-2.4.211-20260407.iso
 
 - Here is the link for Kali Linux:
-- https://www.kali.org/get-kali/#kali-virtual-machines
+- https://www.kali.org/get-kali/#kali-installer-images
 
 ## Downloading VMware
 - Look for VMware and click the download button under VMware
@@ -63,7 +63,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On the Administrator window type in the password that you decided on
 - On the Networks notification click on yes
 
-## Installing Security Onion 2 ISO image on VMWare Workstation
+## Installing Security Onion 2
 - Right click on VMware Workstation Pro and Run as administrator
 - Click Yes on the pop up window
 - Click on File in the tabs section
@@ -123,13 +123,38 @@ This section documents the installation and setup for the virtual machines in a 
 - Click on new Virtual Machine
 - In the New Virtual Machine Wizard window, click on Typical (recommended) option, click next
 - On Guest Operation System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Kali Linux ISO file in your Download folder, click next
-- On Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
+- On the New Virtual Machine Wizard window, select Linux and for version select Ubuntu 64-bit
+- On Name the Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
 - In the Specify Disk Capacity window, type in 20.0, select Split virtual disk into multiple files, click next
-- In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 2048MB in the Memory for this virtual machine
+- In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 4096MB in the Memory for this virtual machine
 - Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 2 in the drop down
 - Click on Network Adapter and select Bridged and click on Replicate Physical Connection State, click on close and then click on finish
 
-  
+## Kali Linux Installation
+- Click on Power on this virtual machine
+- On the Kali Linux Installer menu, select Graphical Install and press Enter
+- On the Select a Language window, select a language and press on the continue button
+- On the Select your location window, select a location and press on the continue button
+- On the Configure the keyboard page, select a location and press on the continue button
+- Let the installation finish
+- On the Configure the network page, type in a hostname and then press on the continue button
+- On the Configure the network page for domain name, type in a domain name or leave it blank
+- On the Set up users and passwords, type in a Full name for the new user and then press the continue button
+- On the Set up the users and password, type in a Username for your account and then press the continue button
+- On the Set up the users and password, type in Choose a password for the new user and re-enter password and then press the continue button
+- On the Configure the clock page, select a time zone and then press on the continue button
+- On the Configure the Partition disks, select Guided - use entire disk and then press on the continue button
+- On the Partition disks page, select the option that specifies your VMware virtual machine and press on the continue button
+- On the Partition disks for Selecting for partitioning page, select All files in one partition (recommended for new users) and press on the continue button
+- On the Partition disks page, select Finish partitioning and write changes to disk and press on the continue button
+- On the Partition disk on if you continue, the changes listed below will be written to the disk select Yes and then press on the continue button
+- Let the installation process finish
+- On the Software selection page press on the continue button
+- On the Install the GRUB boot loader page select Yes and then press on the continue button
+- on the Install the GRUB boot loader You need to make the newly installed system bootable select /dev/sda and then select the continue button
+- Let the installation process finish
+- On the Finish the installation page select the continue button
+- Let the installation process finish
 
 
 
