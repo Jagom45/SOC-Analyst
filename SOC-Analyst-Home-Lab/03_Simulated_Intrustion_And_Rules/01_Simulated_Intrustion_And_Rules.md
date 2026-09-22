@@ -20,6 +20,12 @@
 - Run the nmap scan again, the rule should triggered and security events should be generated, click on security, then click on Alerts under Kibana
 - Click on the 3 bars on Kibana, then click on Stack Management, click on Rules, click on the name rule that you just created, then click on history and you will see when the rule was executed succesfully
 
+## What the Kibana rule actually does
+- source.ip: AND event.dataset.keyboard:suricata.alert
+- source.ip - Show Suricata alert events where the source IP is 192.168.0.22
+- AND - Both conditions must be true
+- event.dataset:suricata.alert - Only look at events identified as Suricata alerts
+
 ## Creating Suricata Alert
 - Go back to the Security Onion 2 dashboard, click on the 3 bars, click on the Detections, click on the add button, under the Add Detection, select Suricata, for license click leave it blank, for signature do not delete the progenerated SID number, type the following in the signature text box:
 
