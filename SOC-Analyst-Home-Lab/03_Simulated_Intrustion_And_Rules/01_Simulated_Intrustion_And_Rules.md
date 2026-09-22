@@ -23,10 +23,31 @@
 ## Creating Suricata Alert
 - Go back to the Security Onion 2 dashboard, click on the 3 bars, click on the Detections, click on the add button, under the Add Detection, select Suricata, for license click leave it blank, for signature do not delete the progenerated SID number, type the following in the signature text box:
 
-alert http <Kali Linux Virtual Machine IP> any -> $HOME_NET any (msg: "Kali Suricata Nmap Alert";
-flow:established,to_server; https.user_agent;content:"Mozilla/5.0 (compatible |3b| Nmap Scripting Engine"; nocase; startswith; classtype:web-application-attack; sid:<type in teh pregenerated sid number here>; rev:;)
+- alert http <Kali Linux Virtual Machine IP> any -> $HOME_NET any (msg: "Kali Suricata Nmap Alert";
+flow:established,to_server; https.user_agent;content:"Mozilla/5.0 (compatible |3b| Nmap Scripting Engine"; nocase; startswith; classtype:web-application-attack; sid:<type in the pregenerated sid number here>; rev:;)
 
 - Then click on Create
 - You have now created your first Suricata rule in Security Onion 2 that will detect the HTTP user agent associated with Nmap's scripting engine
+
+## What the rules actually does
+ - http - This line looks for HTTP traffic
+ - Kali Linux Virtual Machine IP - The traffic must come from this IP address
+ - any - The source can use any port
+ - (->) - The traffic is going from left to right
+ - $HOME_NET - The destination must be an IP address in your defined home network
+ - any - The destination can use any port
+ 
+ - flow: Specifies characterisitcs of the network connection
+ - established - Only look at an established TCP connection
+ - to_server - Look at traffic going towards the server
+
+ - http.user_agent - Look at the HTTP user-agent field
+ - content:"Mozilla/5.0 (compatible |3b| Nmap Scripting Engine" - Search for this specific piece of text, Suricata will inspect the field rather than searching everywhere in the packet
+ - |3b| - That's the hexadecimal notation, 3b in hexadecimal represents ;
+ - nocase - Ignore capitalization when comparing the text
+ - startswith - The specified content must appear at the beginning of the HTTP user-agent field, in this case (Mozilla/5.0 (compatible |3b| Nmap Scripting Engine)
+ - In short this is what the rule is doing - Watch for HTTP traffic from this IP address to my home network, if the HTTP user agent starts with Mozilla......, detect if regardless of capitalizaiton
+
+
 
 
