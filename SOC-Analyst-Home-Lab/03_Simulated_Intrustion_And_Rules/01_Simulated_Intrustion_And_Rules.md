@@ -22,9 +22,10 @@
 
 ## What the Kibana rule actually does
 - source.ip: AND event.dataset.keyboard:suricata.alert
-- source.ip - Show Suricata alert events where the source IP is 192.168.0.22
+- source.ip - Show Suricata alert events where the source IP is that specific IP address
 - AND - Both conditions must be true
 - event.dataset:suricata.alert - Only look at events identified as Suricata alerts
+- In short, show me Suricata alerts where the network traffic came from that specific ip address
 
 ## Creating Suricata Alert
 - Go back to the Security Onion 2 dashboard, click on the 3 bars, click on the Detections, click on the add button, under the Add Detection, select Suricata, for license click leave it blank, for signature do not delete the progenerated SID number, type the following in the signature text box:
