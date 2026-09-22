@@ -46,7 +46,7 @@ flow:established,to_server; https.user_agent;content:"Mozilla/5.0 (compatible |3
  - |3b| - That's the hexadecimal notation, 3b in hexadecimal represents ;
  - nocase - Ignore capitalization when comparing the text
  - startswith - The specified content must appear at the beginning of the HTTP user-agent field, in this case (Mozilla/5.0 (compatible |3b| Nmap Scripting Engine)
- - In short this is what the rule is doing - Watch for HTTP traffic from this IP address to my home network, if the HTTP user agent starts with Mozilla......, detect if regardless of capitalizaiton
+ - In short this is what the rule is doing - Watch for HTTP traffic from this IP address to my home network, if the HTTP user agent starts with Mozilla/5.0 (compatible |3b| Nmap Scripting Engine, detect it regardless of capitalizaiton
 
 
 
