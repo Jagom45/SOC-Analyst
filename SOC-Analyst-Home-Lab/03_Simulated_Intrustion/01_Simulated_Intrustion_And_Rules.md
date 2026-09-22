@@ -36,6 +36,6 @@ nocase
 startswith
 
 - Then click on Create
-
+- You have now created your first Suricata rule in Security Onion 2
 
 
