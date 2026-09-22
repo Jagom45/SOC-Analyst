@@ -21,21 +21,12 @@
 - Click on the 3 bars on Kibana, then click on Stack Management, click on Rules, click on the name rule that you just created, then click on history and you will see when the rule was executed succesfully
 
 ## Creating Suricata Alert
-- Go back to the Security Onion 2 dashboard, click on the 3 bars, click on the Detections, click on the add button, under the Add Detection, select suricata, for license click leave it blank, for signature type the following:
+- Go back to the Security Onion 2 dashboard, click on the 3 bars, click on the Detections, click on the add button, under the Add Detection, select Suricata, for license click leave it blank, for signature do not delete the progenerated SID number, type the following in the signature text box:
 
-http 192.168.0.22 any -> $HOME_NET any
-
-flow:established,to_server
-
-http.user_agent
-
-content:"Mozilla/5.0 (compatible|3b| Nmap Scripting Engine"
-
-nocase
-
-startswith
+alert http <Kali Linux Virtual Machine IP> any -> $HOME_NET any (msg: "Kali Suricata Nmap Alert";
+flow:established,to_server; https.user_agent;content:"Mozilla/5.0 (compatible |3b| Nmap Scripting Engine"; nocase; startswith; classtype:web-application-attack; sid:<type in teh pregenerated sid number here>; rev:;)
 
 - Then click on Create
-- You have now created your first Suricata rule in Security Onion 2
+- You have now created your first Suricata rule in Security Onion 2 that will detect the HTTP user agent associated with Nmap's scripting engine
 
 
