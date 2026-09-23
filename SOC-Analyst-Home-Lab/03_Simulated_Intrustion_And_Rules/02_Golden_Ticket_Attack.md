@@ -22,3 +22,12 @@
 - Go back to Security Onion 2 under detections, you will see ET REMOTE_ACCESS MS Remote Desktop Administrator Login Request, ET SCAN Behavioral Unusually fast Terminal Server Traffic Potential Scan or Infection (Outbound), and ET SCAN Behavioral Unusually fast Terminal Server Traffic Potential Scan or Infection (Inbound)
 - You can click on the arrow icon and drill down on the security generated report and reveal the IP address of the attacker
 - You can make a rule in Kibana by clicking rules under security, then click on Detection rule (SIEM), click on Create new rule button, click on Custom query, under Custom query type in <Kali Linux Virtula Machine IP address> AND event.dataset: sytem.security, click next, give it a name and description of what the rule does, click on continue, and then click on continue again, and click on Create & enable rule
+
+# Enabling more rules to the Elastic Agent installed on Windows Server 2022
+- This file will teach you how to enable more rules under the Elastic Agent policy
+
+## Enabling more rules for Elastic Agent to detect
+- Go back to Kibana and click on Alerts under the Security section, then click on the Manage rules button, then click on the Disabled rules button, you will see all of the rules that are disabled, click on the check box to select as many rules that you can and then click on Bulk action, then click on Enable to enable the selected rules
+- Now all of this rules will be monitoring on the Server 2022 Virtual Machine
+
+- 
