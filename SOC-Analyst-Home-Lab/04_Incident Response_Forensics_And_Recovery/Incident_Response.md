@@ -23,4 +23,17 @@
 ## Downloading the ransomware
 - Login back into your Windows Server 2022 virtual machine as sally
 - Go to this link, https://github.com/NextronSystems/ransomware-simulator/releases
-- Download the quickbuck.exe
+- Download the quickbuck.exe file
+- Go to the downloads folder and extract the files
+- You will see notifications pop up on the right side of the screen
+- Open up CMD or PowerShell and navigate to your Downloads folder and type in the following command: quickbuck.exe
+- Once quickbuck.exe is done running, it will create a file named ransomware-simulator-note.txt on the desktop
+- You can open up the file name and read the contents if you wish
+- Go back to Kibana Alerts, you will see many alerts where generated because of the ransomware
+- You will also see a vssadmin.exe command with the following arguments:
+- vssadmin delete shadows /for=nonrealvolume /all /quiet
+- This attack would fall under Inhibit System Recovery according to MITRE ATT&CK
+- You can great a Kibana Rule to block quickbuck.exe from being downloaded by using the hash of the file by uploading the file to virustotal and grabbing the hash of the file and then creating a rule to block anything that has that same exact hash by using hash blocks
+
+## Using FTK to perform forensics on Windows Server 2022
+-
