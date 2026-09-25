@@ -24,7 +24,7 @@ This section documents the installation and setup for the virtual machines in a 
 - It will now download to your Downloads folder
 
 ## Downloading Security Onion 2
-- Look for for this link and click on it: https://github.com/Security-Onion-Solutions/securityonion/blob/2.4/main/DOWNLOAD_AND_VERIFY_ISO.md
+- Look for this link and click on it: https://github.com/Security-Onion-Solutions/securityonion/blob/2.4/main/DOWNLOAD_AND_VERIFY_ISO.md
 - Look for this link and click on: https://download.securityonion.net/file/securityonion/securityonion-2.4.211-20260407.iso
 - It will now download to your Downloads folder
 
@@ -34,11 +34,11 @@ This section documents the installation and setup for the virtual machines in a 
 
 ## Installing Windows Server 2022 in VMware Workstation
 - Right click on VMware Workstation Pro and Run as administrator
-- Click Yes on the pop up window
+- Click Yes on the pop-up window
 - Click on File in the tabs section
 - Click on new Virtual Machine
 - In the New Virtual Machine Wizard window, click on Typical (recommended) option, click next
-- In the Guest Operation System Installation window, click on I will install the operation system later, click on next
+- In the Guest Operating System Installation window, click on I will install the operating system later, click on next
 - In the Select a Guest Operating System window, click on Microsoft Windows, for the version drop down select Windows Server 2022, click on next
 - In the Name the Virtual Machine window, name your virtual machine, for Location pick a place to install the VM, click next
 - In the Specify Disk Capacity window, type in 60.0, select Split virtual disk into multiple files, click next
@@ -53,28 +53,28 @@ This section documents the installation and setup for the virtual machines in a 
 - On the Press any key to boot from CD or DVD.., press Enter on your keyboard
 - On the Microsoft Server Operating System Setup click next
 - On the next window click on Install now button
-- On the Select the operation system you want to install window, select Windows Server 2022 Standard Evaluation (Deskop Experience) and click next
+- On the Select the operating system you want to install window, select Windows Server 2022 Standard Evaluation (Desktop Experience) and click next
 - On the Applicable notice and license terms select the check box I accept the Microsoft Software License Terms and then click next
-- On Which type of installation do you want click on Custom Install Microsoft Server Operation System only (advanced)
+- On Which type of installation do you want click on Custom Install Microsoft Server Operating System only (advanced)
 - On the next window, click on Drive Unallocated Space, it should say 60.0GB and click on next
 - On the next window, let the setup process finish on its own
 - On the Customize Settings window, type in a strong password that is bare minimum of 12 characters or longer
-- You have now successfully installed Windows Server 2022, now in the VMware Workstation tab, click on the VM tab, then click on Send Ctl+Atl+Del to get passed the lockscreen
+- You have now successfully installed Windows Server 2022, now in the VMware Workstation tab, click on the VM tab, then click on Send Ctrl+Atl+Del to get past the lockscreen
 - On the Administrator window type in the password that you decided on
 - On the Networks notification click on yes
 
 ## Installing Security Onion 2 in VMWare Workstation
 - Right click on VMware Workstation Pro and Run as administrator
-- Click Yes on the pop up window
+- Click Yes on the pop-up window
 - Click on File in the tabs section
 - Click on new Virtual Machine
 - In the New Virtual Machine Wizard window, click on Typical (recommended) option, click next
-- On Guest Operation System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Security Onion Server ISO file in your Download folder, click next
+- On Guest Operating System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Security Onion Server ISO file in your Download folder, click next
 - On Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
 - In the Specify Disk Capacity window, type in 200.0, select Split virtual disk into multiple files, click next
 - In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 16384MB in the Memory for this virtual machine
 - Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 8 in the drop down
-- Click on Network Adapter and select NAT and click on Replicate Physical Conenction State
+- Click on Network Adapter and select NAT and click on Replicate Physical Connection State
 - Click on Add button at the bottom to add a new Network Adapter, on the Hardware Type window click on Network Adapter and click on finished, you will see Network Adapter 2, click on Network Adapter 2 and select Bridge and click on Replicate Physical Connection State, click on close
 - On the Ready to Create Virtual Machine click on Finish
 
@@ -94,7 +94,7 @@ This section documents the installation and setup for the virtual machines in a 
 - On the Elastic Stack binaries page, type in AGREE and then use the tab button to select ok
 - On How should this node be installed, use the up and down button to select Standard This node has access to the internet and then use the tab button to select ok
 - On Enter the hostname (not FQDN) you would like to set, type in a host name and then use the tab button to select ok
-- On the Enter a short description for the nose or press Enter to leave blank, go ahead and just select ok with the tab button
+- On the Enter a short description for the node or press Enter to leave blank, go ahead and just select ok with the tab button
 - On the Please select the NIC you would like to use for management, use the arrow key to select the first NIC
 - On the Choose how to set up your management interface, use the arrow key to select STATIC Set a static IPv4 address (recommended) and then use the tab button to select ok
 - On the What IPv4 address would you like to assign to this Security Onion installation, click on the Edit tab on VMware Workstation, click on Virtual Network Editor and then click on the one that says NAT, click on NAT Setting button next to NAT (shared host's IP address with VMs), look at the Gateway IP address and at the Subnet mask, pick an IP address within that range in CIDR notation, then use tab to select ok
@@ -111,20 +111,20 @@ This section documents the installation and setup for the virtual machines in a 
 - On the single IP address or an IP range, in CIDR notation, to allow, enter an IP range with CIDR notation and then use the tab button to select ok
 - On The Security Onion development team could use your help page, use the tab button to select yes
 - On the following options have been set, would you like to proceed page, use the tab button to select yes
-- Let the installtion process finish
+- Let the installation process finish
 - On the STANDALONE setup is now complete page, use the tab button to select ok, also make sure to use the IP address to enter the portal for Security Onion 2
 - If you like you can use the command sudo su so-status to see if the containers in Security Onion 2 are running, it should say running in green text
 
-## Installing Kali Linux ISO image in VMWare Workstation
+## Installing Kali Linux ISO image in VMware Workstation
 - Go to your Download folders and find the Kali Linux zip file and unzip it
 - Right click on VMware Workstation Pro and Run as administrator
-- Click Yes on the pop up window
+- Click Yes on the pop-up window
 - Click on File in the tabs section
 - Click on new Virtual Machine
 - In the New Virtual Machine Wizard window, click on Typical (recommended) option, click next
-- On Guest Operation System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Kali Linux ISO file in your Download folder, click next
+- On Guest Operating System Installation select Installer disk Image file (iso):, click on Browse button and find and select the Kali Linux ISO file in your Download folder, click next
 - On the New Virtual Machine Wizard window, select Linux and for version select Ubuntu 64-bit
-- On Name the Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
+- On the Name the Virtual Machine window, for Virtual machine name pick a name for your VM, for Location pick a place to install the VM, click next
 - In the Specify Disk Capacity window, type in 20.0, select Split virtual disk into multiple files, click next
 - In the Ready to Create Virtual Machine window, click on Customize Hardware, click on memory and type in 4096MB in the Memory for this virtual machine
 - Click on processors and for Number of processors select 1 in the drop down, for Number of core per processor select 2 in the drop down
@@ -139,9 +139,9 @@ This section documents the installation and setup for the virtual machines in a 
 - Let the installation finish
 - On the Configure the network page, type in a hostname and then press on the continue button
 - On the Configure the network page for domain name, type in a domain name or leave it blank
-- On the Set up users and passwords, type in a Full name for the new user and then press the continue button
-- On the Set up the users and password, type in a Username for your account and then press the continue button
-- On the Set up the users and password, type in Choose a password for the new user and re-enter password and then press the continue button
+- On the Set up users and passwords, type in a full name for the new user and then press the continue button
+- On the Set up the users and password, type in a username for your account and then press the continue button
+- On the Set up the users and password, type in Choose a password for the new user and re-enter the password and then press the continue button
 - On the Configure the clock page, select a time zone and then press on the continue button
 - On the Configure the Partition disks, select Guided - use entire disk and then press on the continue button
 - On the Partition disks page, select the option that specifies your VMware virtual machine and press on the continue button
@@ -151,7 +151,7 @@ This section documents the installation and setup for the virtual machines in a 
 - Let the installation process finish
 - On the Software selection page press on the continue button
 - On the Install the GRUB boot loader page select Yes and then press on the continue button
-- on the Install the GRUB boot loader You need to make the newly installed system bootable select /dev/sda and then select the continue button
+- On the Install the GRUB boot loader You need to make the newly installed system bootable select /dev/sda and then select the continue button
 - Let the installation process finish
 - On the Finish the installation page select the continue button
 - Let the installation process finish
