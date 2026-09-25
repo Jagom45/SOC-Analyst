@@ -60,6 +60,7 @@
 ## Forensics on sally browser history
 - Follow this path: sally -> AppData -> Local -> Microsoft -> Edge -> User Data -> Default -> then on the right panel scroll down and find the history file, right click on it and select export, pick a location to export that file
 - Go to this link: https://sqlitebrowser.org/d1/
+- Go to this link: https://sqlitebrowser.org/dl/
 - Download it and unzip it
 - Double click on DB Browser (SQLCipher)
 - Click on File tab and click on new database and find the history file and open it
