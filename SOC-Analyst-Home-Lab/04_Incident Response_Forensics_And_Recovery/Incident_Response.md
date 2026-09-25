@@ -67,6 +67,7 @@
 
 ## Incident Recovery
 - To recover back to a safe state for the Windows Server 2022 Virtual Machine, click on VM tab, click on Snapshot, click on Snapshot Manager, you will see a graph of where you are and the previous state of the virtual machine, click on the previous state and then click on the Go To button
+- Performing backups will prevent an organization from playing ransomware 
 
 
 
