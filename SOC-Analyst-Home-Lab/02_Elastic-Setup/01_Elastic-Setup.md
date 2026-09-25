@@ -2,8 +2,8 @@
 - This section documents the installation and setup for an elastic agent on Windows Server 2022 along with some system changes to Windows Server 2022.
 
 ## System Changes to Windows Server 2022
-- Open up Vmware Workstation, use the tab to click on Windows Server 2022, click on Power on this virtual machine
-- Click on the VM tab on VMware Workstation and then click on Send Ctl+Alt+Del to get passed the lock screen
+- Open up VMware Workstation, use the tab to click on Windows Server 2022, click on Power on this virtual machine
+- Click on the VM tab on VMware Workstation and then click on Send Ctrl+Alt+Del to get past the lock screen
 - On the login page type in your password and press enter
 - If the network discovery notification pops up press yes
 - Click on the search box on the bottom left and type in run and then type in gpedit.msc
@@ -19,15 +19,15 @@
 - You will see Access the Security Onion web interface at http: IP Address, use Chrome or Edge to access that address, it will take you to the Security Onion 2 portal, access it on the Windows Server 2022 virtual machines using Chrome or Edge
 - In the Security Onion 2 virtual machines type in sudo so-status and type in the password, it will display the Security Onion Status in green text and it should say running
 - In the Windows Server 2022 on the bottom right click on the search bar and type in cmd, in the cmd prompt type in ipconfig to see the virtual machine IP address, also type in hostname to see the host name of your virtual machine
-- In the Windows Server 2022 Click on Edge, on the Welcome page, click on Start without your date, click on Confirm and continue, click on Continue without google data, click on Confirm and continue, click on Confirm and start browsing
+- In the Windows Server 2022 click on Edge, on the Welcome page, click on Start without your data, click on Confirm and continue, click on Continue without google data, click on Confirm and continue, click on Confirm and start browsing
 - Type the IP address that was shown in Security Onion 2 in Chrome or Edge
-- On the login Webpage, enter the email and password
-- On the top left side click on the 3 bars, click on Administration, click on Configuraiton, click on Firewall, click on host groups, for elastic_agent_endpoint, fleet and manager type in the IP address of Windows Server 2022 and then click on the green check
+- On the login Web page, enter the email and password
+- On the top left side click on the 3 bars, click on Administration, click on Configuration, click on Firewall, click on host groups, for elastic_agent_endpoint, fleet and manager type in the IP address of Windows Server 2022 and then click on the green check
 - Click on the 3 bars, click on Downloads and click on Windows x_64 Installer (EXE)
 - On the Downloads popup notification, click on it click on the 3 dots, click on keep, on the Make sure you trust notification, click on the arrow pointing down and then click on keep anyway, click on the folders icon on the Downloads popup
-- Click on the Elastic Agent file and right click on it, click on Administrator
+- Click on the Elastic Agent file and right click on it, click on Run as Administrator
 - Let the installation process finish
 - In the Downloads folder you will see a file named SO-Elastic-Agent_Installer, click on it and it should say Elastic Agent installation completed
-- On the Security Onion 2 webpage, click on Elastic Fleet, on the Elastic Fleet webpage type in the username and password, on the Fleet page, you will see the hostname of your Windows Server 2022, it should say healthy, click on the Agent policies tab, click on endpoint-initial, click on elastic-defend-endpoints, scroll down and click on the button for Malware protections, then under Protection level, select Prevent and deselect Blocklist and select Scan files upon modification, then click on Save integration towards the bottom of the screen
-- On the Security Onion webpage, click on Kibana, click on the 3 bars, click on Management, click on Spaces, click on Default, under Set feature visibilty, click on Security and select Timeline
+- On the Security Onion 2 web page, click on Elastic Fleet, on the Elastic Fleet web page type in the username and password, on the Fleet page, you will see the hostname of your Windows Server 2022, it should say healthy, click on the Agent policies tab, click on endpoint-initial, click on elastic-defend-endpoints, scroll down and click on the button for Malware protections, then under Protection level, select Prevent and deselect Blocklist and select Scan files upon modification, then click on Save integration towards the bottom of the screen
+- On the Security Onion web page, click on Kibana, click on the 3 bars, click on Management, click on Spaces, click on Default, under Set feature visibility, click on Security and select Timeline
 - Click on the 3 bars, click on Dashboards, click on Security Onion - Home, this is where you will see all of the network logs generated
