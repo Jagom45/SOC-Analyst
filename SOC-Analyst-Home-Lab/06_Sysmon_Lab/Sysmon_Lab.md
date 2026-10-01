@@ -1,0 +1,43 @@
+# Sysmon Lab
+- This lab will teach you how to install 
+
+# Downloading Sysmon
+- Go to this webiste: https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
+- Click on Download Sysmon for Linux (GitHub)
+- Go towards your download folder and unzip the folder
+- Lauch PowerShell in Administrator mode
+- Type in cd Downloads
+- Type in ./Sysmon64 -accepteula -i
+- You will see the following:
+System Monitor v15.22 - System activity monitor
+By Mark Russinovich and Thomas Garnier
+Copyright (C) 2014-2026 Microsoft Corporation
+Using libxml2. libxml2 is Copyright (C) 1998-2012 Daniel Veillard. All Rights Reserved.
+Sysinternals - www.sysinternals.com
+
+Sysmon64 installed.
+SysmonDrv installed.
+Starting SysmonDrv.
+SysmonDrv started.
+Starting Sysmon64..
+Sysmon64 started.
+-To verify that sysmon is running, type in the following command: Get-Service -Name Sysmon64
+- You can verity that events are being generated in PowerShell as an administrator with the following command: Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" | Format-Table TimeCreated, Id, Message
+- You will see something similar to the following:
+TimeCreated          Id Message
+-----------          -- -------
+10/1/2026 3:36:45 PM  5 Process terminated:...
+10/1/2026 3:36:45 PM  1 Process Create:...
+10/1/2026 3:36:45 PM  1 Process Create:...
+10/1/2026 3:36:45 PM  1 Process Create:...
+10/1/2026 3:36:44 PM  5 Process terminated:...
+10/1/2026 3:36:44 PM  5 Process terminated:...
+10/1/2026 3:36:44 PM  5 Process terminated:...
+10/1/2026 3:36:44 PM  1 Process Create:...
+10/1/2026 3:36:43 PM  5 Process terminated:...
+10/1/2026 3:36:43 PM  1 Process Create:...
+10/1/2026 3:36:43 PM  1 Process Create:...
+10/1/2026 3:36:43 PM  1 Process Create:...
+10/1/2026 3:36:42 PM  5 Process terminated:...
+- If you want to see the full log, go to Event Viewer, click on Application and Service logs, click on microsoft, windows, sysmon and operation and you can see the full logs there
+- You can click on Details and select Friendly View to see more details about each process event and do investigations from there as well
