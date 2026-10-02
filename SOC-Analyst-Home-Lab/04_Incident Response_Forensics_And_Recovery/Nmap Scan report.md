@@ -32,10 +32,13 @@ Containment: The host can be isolated from the network and the network traffic f
 
 Remediation: Find exposed network services by doing an internal Nmap scan, close unnecessary service or ports, and monitor for more Nmap scans on other machines. Createc a rule in Suricata rules to identify the HTTP-agent associated with the Nmap Scripting Engine.
 
+Here is an example of the Suricata rule that can be created to detect future scans:
+alert http any -> $HOME_NET any (msg: "Kali Suricata Nmap Alert"; flow:established,to_server; http.user_agent;content:"Mozilla/5.0 (compatible |3b| Nmap Scripting Engine"; nocase; startswith; classtype:web-application-attack; sid:; rev:;)
+
 Escalation: Yes escalate to incident response team
 
 Final Disposition: An Nmap scan was detected by Security Onion 2. A custom Kibana detection rule and a Suricata rule was created to detect future Nmap scans and to detect the NSE scripts found in Nmap.
 
 Analyst Notes: An Nmap scan on the windows server 2022 generated reports on Security Onion 2, after doing a drill down on the generated report, the source IP and the destination IP was discovered. A custom Suricata rule was created to identify the HTTP user-agent associated with the Nmap Scripting Engine to detect similar events.
 
-Lessons Learned / Detection Improvement: Creating rules in Kibana and in Suricata rule section can help detect Nmap scans.
+Lessons Learned / Detection Improvement: Creating a rule in Suricata rule section can help detect Nmap scans in the future.
