@@ -15,6 +15,12 @@
 - New-NetFirewallRule -DisplayName "Block IP Outbound" -Direction Outbound -Protocol Any -Action Block -RemoteAddress <Kali Linux IP Address>
 - Try using a CMD ping command, ping <Kali Linux IP Address>, it will fail
 
+# Undoing the host-based firewall and making it connect back to the network
+- Type the following command in PowerShell in administrator mode
+- Remove-NetFirewallRule -DisplayName "Block IP Inbound"
+- Remove-NetFirewallRule -DisplayName "Block IP Outbound"
+
+
 # Simulating a Ransomware Attack
 - Before we simulate the Ransomware Attack, we will create a snapshot of the Windows Server 2022 virtual machine
 - Click on the VM tab, click on Snapshot, take Snapshot, Under name give it a name and a description, and then click on the Take Snapshot button
