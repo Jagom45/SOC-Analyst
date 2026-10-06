@@ -8,11 +8,41 @@
 - To see it with more details use this command: sudo tcpdump -nn -r /home/me/SOC/nmap-scan.pcap -c 20
 - This command is to take a screenshot if you need to: gnome-screenshot -a
 - If you want to inspect the network logs use this command: sudo tcpdump -nn -r /home/me/SOC/nmap-scan.pcap | less
+- sudo tcpdump -nn -r /home/me/SOC/nmap-scan.pcap 'host 192.168.0.34 and host 192.168.0.24 and tcp' | grep 'Flags'
+- sudo tcpdump -nn -r /home/me/SOC/nmap-scan.pcap 'host 192.168.0.34 and host 192.168.0.24 and tcp' | grep 'Flags' | grep '\[S\.'
+- sudo tcpdump -nn -r /home/me/SOC/nmap-scan.pcap 'host 192.168.0.34 and host 192.168.0.24 and tcp port 999'
+- sudo tcpdump -nn -A -r /home/me/SOC/nmap-scan.pcap 'host 192.168.0.34 and host 192.168.0.24 and tcp port 999'
 
 # Security Onion 2
 - Go back to Security Onion 2, click on Alerts
 - You will see many different alerts after doing a nmap scan
-- Lets start with ET SCAN Possible Nmap User-Agent Observed, click on the arrow icon, there is a ticket filled out on the important parts of the alert
+- Lets start with ET SCAN Possible Nmap User-Agent Observed, click on the arrow icon, there is a ticket filled out on the important parts of the alert at the bottom
+
+# Cases
+- Go to the cases section of security Onion 2
+- Click on the blue + button
+- Give it a title and a description and paste the ticket in the notes section
+- Click on save
+
+# Alerts
+- Go back to alerts
+- Click on the blue triangle to escalate the alert
+- A pop up will show up, click on the name of the case that you created under Cases and add it there
+- You will see a blue notification saying that escalating groups of alerts may take a while and will continue in the background
+- The alert should be gone now
+
+# Cases
+- Go back to cases and click on the binocular icon to see if it worked, you will see your notes there and the information from alerts should migrated over
+- Click on the link icon and use the ID to filter out and find the instance for that specific Nmap scam
+- You will see other logs there that are correlated to the Nmap scan if you did multiple cans
+- Go back to the cases main page
+- Find the status field which should say new under the Summary section on the right and select closed
+- Go back to the cases main page, the case should be gone now as it is now closed
+- Click on the drop down arrow and select closed cases and you will find the case that you just closed there
+
+
+
+
 
 
 
@@ -44,13 +74,13 @@ rule: alert http $HOME_NET any -> any any (msg:"ET SCAN Possible Nmap User-Agent
 Source: 192.168.0.34
 
 Triage:
-There is strong evidence that Nmap's scripting Engine generated this alert, the scan used port 5985 which is used for Microsoft WinRM (Windows Remote Management) over HTTP, the activity in the PCAP shows a scan of multiple ports in a few seconds with the syn flag which indicates the first part of the 3 way handshake. This appears to be really suspicious as this is not expected or a planned scan. Also the IP address of the source is not a known ip address within the network. Suricata looked at the HTTP User-agent in teh network traffic and found it to be associated with the Nmap scripting engine.
+There is strong evidence that Nmap's scripting Engine generated this alert, the scan used port 5985 which is used for Microsoft WinRM (Windows Remote Management) over HTTP, the activity in the PCAP shows a scan of multiple ports in a few seconds with the syn flag which indicates the first part of the 3 way handshake. The IP address of the source is not a known ip address within the network. Suricata looked at the HTTP User-agent in teh network traffic and found it to be associated with the Nmap scripting engine.
 
 Analysis:
 After review of the PCAP logs with multiple port scan within a small window of time, the rogue IP address and the alert generated and nmap script engine being used, there is strong evidence of this being a simulated Nmap scan of the Domain controller.
 
 Conclusion:
-There is strong evidence of an simulated Nmap scan on the domain controller, the evidence consist of network logs showing ports being scanned in a small window and the alert generated showing the Nmap scripting engine being used. The activity is a True Positive for the Suricata detection
+There is strong evidence of an simulated Nmap scan on the domain controller, the evidence consist of network logs showing ports being scanned in a small window and the alert generated showing the Nmap scripting engine being used. The activity is a True Positive for the Suricata detection as suricata correctly identifited Nmap traffic.
 
 Escalation:
 Escalated to tier 2 due to an unathorized and a unplanned Nmap scan on a domain controller. There where no plans or notice of that was going to happen.
@@ -61,4 +91,7 @@ The alert was investigated, a ticked was filled out with the necessary informati
 Status: Open / Escalated / True Positive
 
 Evidence:
-[PCAP, alert ID, screenshots, logs, queries, etc.]
+- Security Onion Suricata alert - SID 2024364
+- nmap-scan.pcap
+
+Note: One nmap scan causes multiple network probes, multiple suricata signatures, multiple alerts and it sometimes will be one SOC case
