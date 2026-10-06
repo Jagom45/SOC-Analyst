@@ -31,6 +31,46 @@ Evidence:
 [PCAP, alert ID, screenshots, logs, queries, etc.]
 
 
+
+# Ticket
+
+Title: 
+
+Timestamp: 
+
+Detection: 
+
+Destination: 
+
+Severity: 
+
+network.data.decoded: 
+
+network.transport: 
+
+rule: 
+
+Source:
+
+Triage:
+
+Analysis:
+
+Conclusion:
+
+
+Escalation:
+
+
+Action:
+
+
+Status: 
+
+Evidence:
+[PCAP, alert ID, screenshots, logs, queries, etc.]
+
+
 1. ALERT
    ↓
 2. TRIAGE
