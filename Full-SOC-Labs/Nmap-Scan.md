@@ -81,7 +81,9 @@
 
 - Escalation: Escalated to tier 2 due to an unathorized and a unplanned Nmap scan on a domain controller. There where no plans or notice of that was going to happen.
 
-- Action: The alert was investigated, a ticked was filled out with the necessary information and escalated to tier 2. 
+- Action: The alert was investigated, a ticked was filled out with the necessary information and escalated to tier 2.
+
+- Recommendation - Continue monitoring the domain controller for additional scanning activity. Since the scan was a simulated one no additional actions like containment or blocking is required. But in a real environment considering containment or blocking the ip address would be recommended.
 
 - Status: Open / Escalated / True Positive
 
