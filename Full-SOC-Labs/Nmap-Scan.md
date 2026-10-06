@@ -68,7 +68,7 @@
 
 - Source: 192.168.0.34
 
-- Triage: There is strong evidence that Nmap's scripting Engine generated this alert, the scan used port 5985 which is used for Microsoft WinRM (Windows Remote Management) over HTTP, the activity in the PCAP shows a scan of multiple ports in a few seconds with the syn flag which indicates the first part of the 3 way handshake. The IP address of the source is not a known ip address within the network. Suricata looked at the HTTP User-agent in the network traffic and found it to be associated with the Nmap scripting engine. The other alerts being generated and picked up different ports being scanned also is evidence of a nmap scan.
+- Triage: There is strong evidence that Nmap's scripting Engine generated this alert, the scan used port 5985 which is used for Microsoft WinRM (Windows Remote Management) over HTTP, the activity in the PCAP shows a scan of multiple ports in a few seconds with the syn flag which indicates the first part of the 3 way handshake. The IP address of the source is not a known ip address within the network. Suricata looked at the HTTP User-agent in the network traffic and found it to be associated with the Nmap scripting engine. The other alerts being generated and picked up different ports being scanned also is evidence of a nmap scan. Also the scan looks like it was trying to list what services was running or see what ports where open.
 
 - Other alerts associated with the nmap scan:
 - 8 ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine)	suricata	high	2009358
@@ -87,7 +87,11 @@
 - 1	ET SCAN Potential VNC Scan 5800-5820	suricata	medium	2002910
 - 1	ET SCAN RDP Connection Attempt from Nmap	
 
+Mitre Att&ck - Network Service Discovery & Tactic - Discovery 
+https://attack.mitre.org/techniques/T1046/
+
 - Analysis: After review of the PCAP logs with multiple port scan within a small window of time, the rogue IP address and the alert generated and nmap script engine being used, there is strong evidence of this being a simulated Nmap scan of the Domain controller.
+
 
 - Conclusion: There is strong evidence of an simulated Nmap scan on the domain controller, the evidence consist of network logs showing ports being scanned in a small window and the alert generated showing the Nmap scripting engine being used. The activity is a True Positive for the Suricata detection as suricata correctly identifited Nmap traffic.
 
