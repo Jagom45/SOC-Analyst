@@ -44,11 +44,6 @@
 
 
 
-
-
-
-
-
 # Ticket
 
 - Title: ET SCAN Possible Nmap User-Agent Observed
@@ -73,7 +68,24 @@
 
 - Source: 192.168.0.34
 
-- Triage: There is strong evidence that Nmap's scripting Engine generated this alert, the scan used port 5985 which is used for Microsoft WinRM (Windows Remote Management) over HTTP, the activity in the PCAP shows a scan of multiple ports in a few seconds with the syn flag which indicates the first part of the 3 way handshake. The IP address of the source is not a known ip address within the network. Suricata looked at the HTTP User-agent in teh network traffic and found it to be associated with the Nmap scripting engine.
+- Triage: There is strong evidence that Nmap's scripting Engine generated this alert, the scan used port 5985 which is used for Microsoft WinRM (Windows Remote Management) over HTTP, the activity in the PCAP shows a scan of multiple ports in a few seconds with the syn flag which indicates the first part of the 3 way handshake. The IP address of the source is not a known ip address within the network. Suricata looked at the HTTP User-agent in the network traffic and found it to be associated with the Nmap scripting engine. The other alerts being generated and picked up different ports being scanned also is evidence of a nmap scan.
+
+- Other alerts associated with the nmap scan:
+- 8 ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine)	suricata	high	2009358
+- 8	ET SCAN Possible Nmap User-Agent Observed	suricata	high	2024364
+- 4	ET INFO GIOP/IIOP Request Outbound	suricata	high	2034730
+- 4	ET INFO Outbound MSSQL Connection to Non-Standard Port - Likely Malware	suricata	medium	2013409
+- 4	ET SCAN MS Terminal Server Traffic on Non-standard Port	suricata	medium	2023753
+- 2	ET INFO RDP - Response To External Host	suricata	low	2001330
+- 2	ET INFO RMI Request Outbound	suricata	high	2034718
+- 2	ET SCAN Suspicious inbound to MSSQL port 1433	suricata	medium	2010935
+- 2	ET SCAN Suspicious inbound to Oracle SQL port 1521	suricata	medium	2010936
+- 2	ET SCAN Suspicious inbound to PostgreSQL port 5432	suricata	medium	2010939
+- 2	ET SCAN Suspicious inbound to mySQL port 3306	suricata	medium	2010937
+- 2	GPL DNS named version attempt	suricata	medium	2100257
+- 1	ET INFO Observed Google DNS over HTTPS Domain (dns .google in TLS SNI)	suricata	low	2047866
+- 1	ET SCAN Potential VNC Scan 5800-5820	suricata	medium	2002910
+- 1	ET SCAN RDP Connection Attempt from Nmap	
 
 - Analysis: After review of the PCAP logs with multiple port scan within a small window of time, the rogue IP address and the alert generated and nmap script engine being used, there is strong evidence of this being a simulated Nmap scan of the Domain controller.
 
