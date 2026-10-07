@@ -59,7 +59,7 @@ Triage: An Event ID of 4688 Process was created. I investigated the alert and sa
 
 Analysis: After analyzing the event and the command that was executed under powershell, the command make Powershell write the text SOC-LAB-PowerShell-Test to the screen. There is strong evidence that a CMD process was used to create Powershell.exe and excute those lines of text.
 
-Conclusion: No harm was intented with that command in Powershell.exe, the event is flagged as True Negative as the event did show up in event viewer but it was not a malicious intent and there is no evidence of malicious activity
+Conclusion: No harm was intented with that command in Powershell.exe, the event is flagged as False Negative as the event did show up in event viewer but it was not a malicious intent and there is no evidence of malicious activity
 
 Escalation: No escalation was required
 
@@ -67,7 +67,7 @@ Action: The alert was investigated using the event viewer, looked over the paren
 
 Recommendation: Continue monitoring the computer to see if powershell.exe is used to cause harm
 
-Status: Closed/True Negative
+Status: Closed/False Negative
 
 Evidence:
 Event Viewer Screenshot 
