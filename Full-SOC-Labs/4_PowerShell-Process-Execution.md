@@ -1,4 +1,4 @@
-# Creating a malicious powershell script to trigger an alert event in event viewer
+# Creating an Event ID with PowerShell
 - Type in run in the search bar
 - secpol.msc
 - Computer Configuration -> Windows Setting -> Security Settings -> Advanced Audit Policy Configuration -> Sysetm Audit Policies -> Detailing Tracking -> Audit Process Creation
