@@ -96,6 +96,7 @@ Status: Open/Escalated/True Positive
 
 Evidence:
 hydra-rpd.pcap
+PCAP shows evidence of RDP traffic from the kali linux machine to the windows system on port 3389.
 
 Going to make a hydra detection rule later.
 
