@@ -1,4 +1,4 @@
-# Performing a Brute-Force Attack
+# Performing a Hydra-Brute-Force Attack
 - Go to Security Onion 2 terminal
 - Then type in this command: sudo tcpdump -ni ens192 'host <kali linux IP> and host <windows server IP>' -w /home/me/SOC/hydra-rdp.pcap
 - This will log the network attactivity from hyrda
