@@ -1,4 +1,12 @@
 # Performing a Brute-Force Attack
+- Go to Security Onion 2 terminal
+- Then type in this command: sudo tcpdump -ni ens192 'host <kali linux IP> and host <windows server IP>' -w /home/me/SOC/hydra-rdp.pcap
+- This will log the network attactivity from hyrda
+- To look at the logs type in the following command:  tcpdump -nn -r /home/me/SOC/hydra-rdp.pcap
+
+
+
+
 - On Kali linux type this command into the command prompt: hydra -t 1 -V -f -l sally -P rockyou.txt 192.168.0.24 rdp
 - Here is what the command does:
 - hydra	- Run the Hydra login-testing tool
@@ -15,6 +23,32 @@
 - Go to alerts
 - You will see: 8	ET INFO RDP - Response To External Host	suricata	low	2001330
 
+# Security Onion 2
+- Go back to Security Onion 2, click on Alerts
+- You will see many different alerts after doing a nmap scan
+- Lets start with ET INFO RDP - Response to External Host Suricata, click on the arrow icon, there is a ticket filled out on the important parts of the alert at the bottom
+
+# Cases
+- Go to the cases section of security Onion 2
+- Click on the blue + button
+- Give it a title and a description and paste the ticket in the notes section
+- Click on save
+
+# Alerts
+- Go back to alerts
+- Click on the blue triangle to escalate the alert
+- A pop up will show up, click on the name of the case that you created under Cases and add it there
+- You will see a blue notification saying that escalating groups of alerts may take a while and will continue in the background
+- The alert should be gone now
+
+# Cases
+- Go back to cases and click on the binocular icon to see if it worked, you will see your notes there and the information from alerts should migrated over
+- Click on the link icon and use the ID to filter out and find the instance for that specific Nmap scam
+- You will see other logs there that are correlated to the Nmap scan if you did multiple cans
+- Go back to the cases main page
+- Find the status field which should say new under the Summary section on the right and select closed
+- Go back to the cases main page, the case should be gone now as it is now closed
+- Click on the drop down arrow and select closed cases and you will find the case that you just closed there
 
 
 
@@ -46,7 +80,7 @@ Source: 192.168.0.24
 
 Source.ip: 3389
 
-Triage: I checked the source ip address and its using port 3389 which is Remote Desktop Protocol (RDP), the rule that detected triggered because an internal computer using port 3389 tried to communicate with an external computer on any port, there is evidence that an internal computer is trying communicate with a remote computer
+Triage: I checked the source ip address and its using port 3389 which is Remote Desktop Protocol (RDP), the rule that detected triggered because an internal computer using port 3389 tried to communicate with an external computer on any port, there is evidence that an internal computer is trying communicate with a remote computer. Evidence from the network logs from hydra-rpd.pcap also shows strong evidence of an external host trying to communicate with an internal host 192.168.0.24:3389.
 
 Analysis: After reviewing the source IP address, the port of the source IP address and the destination IP address and the destination port, there is enough evidence that an internal computer tried to communicate with an external host. The rule was triggered correctly. 192.168.0.24:3389 to 192.168.0.35:33178. This correlates the the hydra attack that we did previously.
 
@@ -61,7 +95,7 @@ Recommendation: Isolate the domain controller or block 192.168.0.35 IP address t
 Status: Open/Escalated/True Positive
 
 Evidence:
-[PCAP, alert ID, screenshots, logs, queries, etc.]
+hydra-rpd.pcap
 
 Going to make a hydra detection rule later.
 
