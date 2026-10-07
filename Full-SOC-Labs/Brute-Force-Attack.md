@@ -48,7 +48,7 @@ Source.ip: 3389
 
 Triage: I checked the source ip address and its using port 3389 which is Remote Desktop Protocol (RDP), the rule that detected triggered because an internal computer using port 3389 tried to communicate with an external computer on any port, there is evidence that an internal computer is trying communicate with a remote computer
 
-Analysis: After reviewing the source IP address, the port of the source IP address and the destination IP address and the destination port, there is enough evidence that an internal computer tried to communicate with an external host. The rule was triggered correctly. 192.168.0.24:3389 to 192.168.0.35:33178. 
+Analysis: After reviewing the source IP address, the port of the source IP address and the destination IP address and the destination port, there is enough evidence that an internal computer tried to communicate with an external host. The rule was triggered correctly. 192.168.0.24:3389 to 192.168.0.35:33178. This correlates the the hydra attack that we did previously.
 
 Conclusion: This is an intent that an internal computer communicate to a remote computer. This alert is a True positive and will be escalated. Suricata correctly detected RDP response traffic with external host.
 
