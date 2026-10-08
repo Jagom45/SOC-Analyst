@@ -67,7 +67,7 @@ Action: The alert was investigated using the event viewer, looked over the paren
 
 Recommendation: Continue monitoring the computer to see if powershell.exe is used to cause harm
 
-Status: Closed/False Negative
+Status: Closed/False Positive
 
 Evidence:
 Event Viewer Screenshot 
