@@ -301,6 +301,8 @@ TimeCreated                      Id LevelDisplayName Message
 10/4/2026 4:05:26 PM           4625 Information      An account failed to log on....
 
 
+# Command 8
+- Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Powershell/Operational'; Id=4104} -MaxEvents 5 | Select-Object TimeCreated, Id, Message | Format-List
 
 
 
