@@ -304,6 +304,15 @@ TimeCreated                      Id LevelDisplayName Message
 # Command 8
 - Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Powershell/Operational'; Id=4104} -MaxEvents 5 | Select-Object TimeCreated, Id, Message | Format-List
 
+# Command 9
+- Get-WinEvent -FilterHashtable @{
+    LogName = 'Security'
+    Id      = 4688
+} -MaxEvents 20 |
+    Where-Object { $_.Message -match 'powershell.exe|pwsh.exe' } |
+    Select-Object TimeCreated, Id, Message |
+    Format-List
+
 
 
 
