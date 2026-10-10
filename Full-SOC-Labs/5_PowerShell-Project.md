@@ -178,4 +178,142 @@ A
 - Where-Object - keeps only process named chrome
 - .Count counts how many Chrome process were found
 
+# Command 24
+- Get-Process -Name chrome | Select-Object ProcessName, Id, StartTime
+- Get-Process - Retrieves information about running processes
+- -Name chrome - Tells PowerShell to retrieve process named chrome
+- | passes those process object to the next command
+- Select-Object - choose which properties to display
+- ProcessName - Displays the process name
+- Id - displays the process ID (PID), which helps distinguish individual process instances
+- StartTime - Displays when each process started, if that information is available
+- ProcessName    Id StartTime
+-----------    -- ---------
+chrome       2856 10/9/2026 11:14:01 PM
+chrome       4444 10/9/2026 11:43:00 PM
+chrome       4488 10/7/2026 10:49:45 AM
+
+# Command 25
+- Get-Process -Name chrome | Select-Object ProcessName, Id, Startime | Sort-Object StartTime -Descending
+- Get-Process -Name chrome - Retrieves Chrome processes
+- | passes the results to the next command
+- Sort-Object StartTime - sorts the process by their start time
+- -Descending - puts the latest start times first
+- PowerShell attempts to sort the incoming objects using their default sorting behavior if it was just Sort-Object -Descending
+
+# Command 26
+- Get-Process -Name chrome | Sort-Object StartTime -Descending | Select-Object -First 5 ProcessName, Id, StartTime
 - 
+- ProcessName    Id StartTime
+-----------    -- ---------
+chrome       7704 10/10/2026 12:23:52 AM
+chrome       4444 10/9/2026 11:43:00 PM
+chrome      24772 10/9/2026 11:42:58 PM
+chrome      19644 10/9/2026 11:41:04 PM
+
+
+# Event Viewer
+- Commands with Event Viewer
+
+# Command 1
+- Get-WinEvent -Listlog *
+- Get-WinEvent - retrieves Windows events
+- -LogName Security - Specifies the Security log
+- * - List all
+- Shows all of the logs
+
+# Command 2
+- Get-WinEvent -ListLog Security
+- LogMode - Indicates how Windows manages the event log, such as whether it overwrites older events when needed
+- MaximumSizeInBytes - The maximum storage size configured for the log, measured in bytes
+- RecordCount - The number of event records currently stored in the log
+- LogName - The name of the log, which should be Security
+- LogMode   MaximumSizeInBytes RecordCount LogName
+-------   ------------------ ----------- -------
+Circular            20971520       30954 Security
+
+# Command 3
+-Get_WinEvent -LogName Security -MaxEvents 5
+- TimeCreated - The date and time Windows recorded the event
+- Id - The Windows event ID, which helps identify the type of event
+- LevelDisplayName - The event's severity or level, such as Information, Warning, or Error, not every security event uses this field
+- Message - A description of what happened
+
+
+-ProviderName: Microsoft-Windows-Security-Auditing
+TimeCreated                      Id LevelDisplayName Message
+-----------                      -- ---------------- -------
+10/10/2026 12:51:03 AM         4672 Information      Special privileges assigned to new logon....
+10/10/2026 12:51:03 AM         4624 Information      An account was successfully logged on....
+
+# Command 4
+- Get-WinEvent -LogName Security -MaxEvents 5 | Select-Object Id
+- Filters by Id field
+- Id
+  --
+4672
+4624
+
+# Command 5
+- Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 5
+- Get-WinEvent - retrieves windows event records
+- -FilterHashtable - lets you filter events using several conditions at once
+- @{ ... } creates a collection of named settings for the filter
+- LogName='Security' - tells PowerShell to search the Security log
+- Id=4625 - restricts the results to failed logon events
+- -MaxEvent 5 - Limits the output to five matching events
+
+- ProviderName: Microsoft-Windows-Security-Auditing
+TimeCreated                      Id LevelDisplayName Message
+-----------                      -- ---------------- -------
+10/4/2026 5:57:16 PM           4625 Information      An account failed to log on....
+10/4/2026 4:05:26 PM           4625 Information      An account failed to log on....
+
+# Command 6
+- Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 5 | Select-Object TimeCreated, Message
+- Get-WinEvent - Retrieves windows events
+- FilterHashtable @{LogName='Security'; Id=4625} filters for failed logon events in the Security log
+- MaxEvents 5 limits the results to five events.
+- | passes those events to the next command
+- Select-Object TimeCreated, Message displays when each event occurred and its detailed message
+
+
+-TimeCreate Message
+---------- -------
+An account failed to log on....
+An account failed to log on....
+
+# Command 7
+- Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625; StartTime=(Get-Date).AddHours(-1000)} -MaxEvents 10
+- LogName — which event log to search.
+- Id — which event ID to look for.
+- StartTime — the earliest event time to include
+- Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625; StartTime=(Get-Date).AddHours(-1)} -MaxEvents 10
+- StartTime - sets the earliest time for matching events.
+- Get-Date - retrieves the current date and time.
+- .AddHours(-1) calculates the time one hour before now. The -1 means subtract one hour.
+- MaxEvents 10 limits the output to ten matching events.
+
+- ProviderName: Microsoft-Windows-Security-Auditing
+TimeCreated                      Id LevelDisplayName Message
+-----------                      -- ---------------- -------
+10/4/2026 5:57:16 PM           4625 Information      An account failed to log on....
+10/4/2026 4:05:26 PM           4625 Information      An account failed to log on....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
