@@ -1,0 +1,17 @@
+# Using Nessus against the LAN
+- On your kali linux virtual machine download Nessus, Download link: https://www.tenable.com/downloads/nessus?loginAttempted=true
+- Select the latest version of Nessus and select Linux-Debian-amd64
+- On the License Agreement select I Agree
+- CD to /Downloads in Kali linux
+- Type in the following command: apt install ./Nessus-10.12.5-debian10_amd64.deb
+- On your kali linux virtual machine go to this link: https://www.tenable.com/products/nessus/nessus-essentials
+- Fill out the Register for your 30-day free license
+- The code will be in the email
+- Go back to your kali linux virtual machine and type the following command: systemctl start nessusd
+- Open Firefox and type in the following URL:127.0.0.1:8834
+- On the tenable Nessus webpage select Register Offline and click on Continue
+- Copy the challenge code and click on Offline Registration link
+- Copy and past the challenge code in the first field and the code from your email in the second field
+- Copy the Begin TENABLE LICENSE
+- On the tenable Nessus Professional webpage past the Begin TENABLE LICENSE under the Nessus License Key and press on Continue
+- Fill in the Username and Password and click on Submit
